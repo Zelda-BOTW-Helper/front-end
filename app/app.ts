@@ -5,6 +5,7 @@ import './styles/styles.less';
 import { AppRouting } from "./routing";
 
 import './modules/extended-keyboard-interactions';
+import './components';
 
 angular
 	.module('zelda-botw', 
@@ -17,8 +18,9 @@ angular
 			'ngRoute',
 			'ngSanitize',
 			'ngMaterial',
+			'LocalStorageModule',
 			'extendedKeyboardInteractions',
-			'LocalStorageModule'
+			'components'
 		]
 	)
 

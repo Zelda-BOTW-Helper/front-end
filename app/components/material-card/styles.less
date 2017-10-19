@@ -1,0 +1,98 @@
+@import "../../styles/colors.less";
+
+@x-position: 0;
+@y-position: 1;
+
+.material-card {
+    min-height: 200px;
+
+    .icon {
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, .8);
+        padding: 4px;
+    }
+
+    .header {
+        background-color: @blue-500;
+        color: white;
+        padding: 16px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+
+        .icon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .value {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 48px;
+        }
+
+        .label {
+            font-size: 16px;
+        }
+    }
+
+    .body {
+        min-height: 100px;
+        background-color: #FAFAFA;
+
+        .armor-piece {
+            padding: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, .12);
+
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            & > .icon {
+                width: 48px;
+                height: 48px;
+                margin-right: 32px;
+                position: relative;
+
+                .armor-level {
+                    position: absolute;
+                    bottom: -4px;
+                    right: -4px;
+
+                    font-size: 11px;
+                    background-color: @red-500;
+                    color: white;
+                    border-radius: 8px;
+                    padding: 1px 4px 2px 4px;
+                }
+            }
+
+            .materials {
+                .add-symbol {
+                    font-size: 32px;
+                    font-weight: 300;
+                    margin: 0 16px;
+                    color: rgba(0, 0, 0, .38);
+                }
+
+                .material {
+                    .icon {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    .label {
+                        .number {
+                            font-size: 18px;
+                        }
+
+                        .name {
+                            font-size: 11px;
+                            font-style: italic
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
