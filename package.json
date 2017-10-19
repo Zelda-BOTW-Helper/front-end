@@ -1,0 +1,60 @@
+{
+	"name": "zelda-botw",
+	"version": "0.1.0",
+	"repository": {
+		"type": "git"
+	},
+	"scripts": {
+		"install_dep": "npm install",
+		"create_config": "mkdir -p dist && cp -r app/conf dist/ && cp -r app/assets dist/ && cp app/404.html dist/ && cp app/robots.txt dist/",
+		"build": "rm -rf dist/* && npm run create_config && ./node_modules/.bin/webpack --config webpack.config.prod.js",
+		"serve_dist": "npm run build && ENTRY_PORT=6001;ENTRY_PORT=$ENTRY_PORT ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --port $ENTRY_PORT --progress --config webpack.config.prod.js",
+		"create_config_dev": "mkdir -p dist && cp -r app/conf dev/ && cp -r app/assets dev/ && cp app/404.html dev/ && cp app/robots.txt dev/",
+		"build_dev": "rm -rf dev/* && npm run create_config_dev && ENTRY_PORT=6000;ENTRY_PORT=$ENTRY_PORT ./node_modules/.bin/webpack --config webpack.config.dev.js",
+		"serve_dev": "npm run create_config_dev &&  ENTRY_PORT=9099;ENTRY_PORT=$ENTRY_PORT ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --port $ENTRY_PORT --progress --config webpack.config.dev.js"
+	},
+	"engines": {
+		"node": ">=0.10.0"
+	},
+	"dependencies": {
+		"@types/angular": "1.6.34",
+		"@types/angular-animate": "1.5.8",
+		"@types/angular-cookies": "1.4.5",
+		"@types/angular-local-storage": "0.6.0",
+		"@types/angular-material": "1.1.54",
+		"@types/angular-resource": "1.5.14",
+		"@types/angular-route": "1.3.4",
+		"@types/es6-promise": "0.0.33",
+		"angular": "1.6.6",
+		"angular-animate": "1.6.6",
+		"angular-aria": "1.6.6",
+		"angular-cookies": "1.6.6",
+		"angular-messages": "1.6.6",
+		"angular-resource": "1.6.6",
+		"angular-route": "1.6.6",
+		"angular-sanitize": "1.6.6",
+		"angular-local-storage": "0.7.1",
+		"angular-material": "1.1.5",
+		"angular-poller": "0.4.5",
+		"awesome-typescript-loader": "3.2.3",
+		"css-loader": "0.28.7",
+		"dom-to-image": "2.6.0",
+		"extract-loader": "1.0.1",
+		"extract-text-webpack-plugin": "3.0.1",
+		"file-loader": "1.1.5",
+		"html-loader": "0.5.1",
+		"html-webpack-plugin": "2.30.1",
+		"less": "3.0.0-alpha.3",
+		"less-loader": "4.0.5",
+		"line-navigator": "2.1.6",
+		"ng-annotate-loader": "0.6.1",
+		"ngtemplate-loader": "2.0.1",
+		"style-loader": "0.19.0",
+		"typescript": "2.5.3",
+		"url-loader": "0.6.2",
+		"webpack": "3.8.1"
+	},
+	"devDependencies": {
+		"webpack-dev-server": "2.9.2"
+	}
+}

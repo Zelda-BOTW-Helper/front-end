@@ -1,0 +1,12 @@
+.DS_Store
+*.log
+*.swp
+npm-debug.log
+*.iws
+.env
+.stylelintrc
+
+node_modules
+dist
+dev
+.sass-cache

@@ -1,0 +1,45 @@
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+html {
+    font-family: 'Lato', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    padding: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, .12);
+}
+
+.web-link {
+    color: #0000FF;
+    font-size: 11px;
+    cursor: pointer;
+    vertical-align: baseline;
+    outline: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    &.disabled {
+        color: rgba(0, 0, 0, .38);
+        text-decoration: none;
+        cursor: default;
+    }
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.no-select {
+    outline: none;
+}
