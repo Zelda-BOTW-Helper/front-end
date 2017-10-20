@@ -2,17 +2,17 @@ import "./styles.less";
 
 import { Component } from "../../decorators";
 
-import { NeededMaterial } from "../../classes/needed-material.class";
+import { Item } from "../../classes/Item.class";
 
 @Component({
     controllerAs: 'ctrl',
     templateUrl: require("./template.html"),
     bindings: {
-        material: "<"
+        item: "<"
     }
 })
-export class MaterialCard {
-    private material: NeededMaterial;
+export class ItemSmallIcon {
+    private item: Item;
 
     public constructor() {}
 }

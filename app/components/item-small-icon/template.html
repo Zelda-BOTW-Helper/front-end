@@ -1,0 +1,15 @@
+<div class="item" layout="column" layout-align="center center" flex>
+    <div class="icon">
+        <sprite-image 
+            sprite-src="assets/images/{{ ctrl.item.type }}.png" sprite-scale="1/3"
+            elements-row-spacing="1" elements-column-spacing="1"
+            element-size-x="96" element-size-y="96"
+            element-offset-x="ctrl.item.imageOffset.x" element-offset-y="ctrl.item.imageOffset.y"
+            extra-offset-x="ctrl.item.imageOffset.xOffset" extra-offset-y="ctrl.item.imageOffset.yOffset">
+        </sprite-image>
+    </div>
+    <div class="label">
+        <span class="number" ng-bind="ctrl.item.quantity"></span>
+        <span class="name"> {{ ctrl.item.name }}</span>
+    </div>
+</div>

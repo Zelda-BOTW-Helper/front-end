@@ -1,0 +1,17 @@
+<div class="armor-piece" layout="row">
+    <div class="icon">
+        <sprite-image 
+            sprite-src="assets/images/{{ ctrl.armorPiece.type }}.png" sprite-scale=".5"
+            elements-row-spacing="1" elements-column-spacing="1"
+            element-size-x="96" element-size-y="96"
+            element-offset-x="ctrl.armorPiece.imageOffset.x" element-offset-y="ctrl.armorPiece.imageOffset.y"
+            extra-offset-x="ctrl.armorPiece.imageOffset.xOffset" extra-offset-y="ctrl.armorPiece.imageOffset.yOffset">
+        </sprite-image>
+
+        <div class="armor-level">Lvl {{ ctrl.armorPiece.level }}</div>
+    </div>
+
+    <div class="materials" layout="row" layout-align="start center" flex>
+        <item-small-icon ng-repeat="material in ctrl.armorPiece.neededMaterials" item="material" flex></item-small-icon>
+    </div>
+</div>

@@ -6,11 +6,12 @@ webpackConfig.devtool = 'eval';
 
 webpackConfig.output.path = path.resolve(__dirname, './dev');
 
-// Use style loader instead of ExtractTextPlugin to achieve livereload
+// We use directly style loader instead of ExtractTextPlugin to achieve livereload
 webpackConfig.module.loaders.push({
 	test: /\.css$/,
 	loader: 'style-loader!css-loader?sourceMap&sourceComments'
 });
+
 webpackConfig.module.loaders.push({
 	test: /\.less$/,
 	loader: 'style-loader!css-loader!less-loader?sourceMap&sourceComments'

@@ -2,63 +2,19 @@
     <div class="header" layout="row">
         <div class="icon">
             <sprite-image 
-                sprite-src="../../assets/images/materials.png" sprite-scale="2/3"
-                elements-row-spacing="1" elements-column-spacing="15"
+                sprite-src="assets/images/{{ ctrl.material.type }}.png" sprite-scale="2/3"
+                elements-row-spacing="1" elements-column-spacing="1"
                 element-size-x="96" element-size-y="96"
-                element-offset-x="4" element-offset-y="3">
+                element-offset-x="ctrl.material.imageOffset.x" element-offset-y="ctrl.material.imageOffset.y"
+                extra-offset-x="ctrl.material.imageOffset.xOffset" extra-offset-y="ctrl.material.imageOffset.yOffset">
             </sprite-image>
         </div>
         <div layout="column" layout-align="center end" flex>
-            <div class="value">5</div>
-            <div class="label">Griffe de Lézalfos</div>
+            <div class="value" ng-bind="ctrl.material.quantity"></div>
+            <div class="label">{{ ctrl.material.name }}</div>
         </div>
     </div>
     <div class="body" layout="column">
-        <div class="armor-piece" layout="row">
-            <div class="icon">
-                <sprite-image 
-                    sprite-src="../../assets/images/armor-heads.png" sprite-scale=".5"
-                    elements-row-spacing="1" elements-column-spacing="1"
-                    element-size-x="96" element-size-y="96"
-                    element-offset-x="0" element-offset-y="2">
-                </sprite-image>
-
-                <div class="armor-level">Lvl 2</div>
-            </div>
-
-            <div class="materials" layout="row" layout-align="start center" flex>
-                <div class="material" layout="column" layout-align="center center" flex>
-                    <div class="icon">
-                        <sprite-image 
-                            sprite-src="../../assets/images/materials.png" sprite-scale="1/3"
-                            elements-row-spacing="1" elements-column-spacing="15"
-                            element-size-x="96" element-size-y="96"
-                            element-offset-x="4" element-offset-y="3">
-                        </sprite-image>
-                    </div>
-                    <div class="label">
-                        <span class="number">5</span>
-                        <span class="name"> Griffe de Lézalfos</span>
-                    </div>
-                </div>
-
-                <div class="add-symbol">+</div>
-
-                <div class="material" layout="column" layout-align="center center" flex>
-                    <div class="icon">
-                        <sprite-image 
-                            sprite-src="../../assets/images/food.png" sprite-scale="1/3"
-                            elements-row-spacing="1" elements-column-spacing="15"
-                            element-size-x="96" element-size-y="96"
-                            element-offset-x="0" element-offset-y="9">
-                        </sprite-image>
-                    </div>
-                    <div class="label">
-                        <span class="number">5</span>
-                        <span class="name"> Perche Hyrule</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <armor-piece-row ng-repeat="piece in ctrl.material.requiredBy" armor-piece="piece"></armor-piece-row>
     </div>
 </div>

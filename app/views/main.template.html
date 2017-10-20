@@ -10,6 +10,6 @@
     </md-toolbar>
 
     <md-content class="cards-container" layout="column" flex>
-        <material-card></material-card>
+        <material-card ng-repeat="material in ctrl.materials" material="material"></material-card>
     </md-content>
 </div>
